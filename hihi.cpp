@@ -4,10 +4,8 @@
 
 using namespace std
 
-
 ;int strcmp_case_insensitive(string str1, string str2)
 {
-    
 
     for (int i = 0; i < 5; i++)
     {
@@ -44,6 +42,7 @@ int main()
     string strh = "hi";
 
     cout << strcmp_case_insensitive(strH, strh) << "\n";
+    cout << strcmp_case_insensitive(strh, strH) << "\n";
 
     return 0;
 
