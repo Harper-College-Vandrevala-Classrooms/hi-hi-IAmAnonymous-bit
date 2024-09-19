@@ -40,6 +40,11 @@ int main()
     cout << strcmp_case_insensitive(strA, strC) << "\n";
     cout << strcmp_case_insensitive(strC, strB) << "\n";
 
+    string strH = "Hi";
+    string strh = "hi";
+
+    cout << strcmp_case_insensitive(strH, strh) << "\n";
+
     return 0;
 
 }
