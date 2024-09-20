@@ -6,11 +6,12 @@ using namespace std
 
 ;int strcmp_case_insensitive(string str1, string str2)
 {
-
+    
     for (int i = 0; i < 5; i++)
     {
         char ch1 = tolower(str1[i]);
         char ch2 = tolower(str2[i]);
+
         if (ch1 != ch2)
         {
             int i1 = ch1;
