@@ -4,7 +4,7 @@
 
 using namespace std
 
-;int strcmp_case_insensitive(string str1, string str2)
+;string strcmp_case_insensitive(string str1, string str2)
 {
     
     for (int i = 0; i < 5; i++)
@@ -16,16 +16,16 @@ using namespace std
         {
             int i1 = ch1;
             int i2 = ch2;
-            if (i1 > i2)
+            if (i1 - i2 > 0)
             {
-                return 1;
+                return "greater than 0";
             }
-            return -1;
+            return "less than 0";
         }
 
     }
 
-    return 0;
+    return "equal to 0";
 
 }
 
