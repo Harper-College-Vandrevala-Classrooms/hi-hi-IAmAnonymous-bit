@@ -1,49 +1,50 @@
 #include <iostream>
 #include <string>
 #include <cctype>
+#include <assert.h>
 
 using namespace std
 
-;string strcmp_case_insensitive(string str1, string str2)
+;int strcmp_case_insensitive(string str1, string str2)
 {
+
+    int ascii1 = 0;
+    int ascii2 = 0;
     
-    for (int i = 0; i < 5; i++)
+    for (int i = 0; i < str1.length(); i++)
     {
         char ch1 = tolower(str1[i]);
-        char ch2 = tolower(str2[i]);
-
-        if (ch1 != ch2)
+        if (ch1 != ' ')
         {
-            int i1 = ch1;
-            int i2 = ch2;
-            if (i1 - i2 > 0)
-            {
-                return "greater than 0";
-            }
-            return "less than 0";
+            ascii1 += ch1;
         }
-
     }
 
-    return "equal to 0";
+    for (int i = 0; i < str2.length(); i++)
+    {
+        char ch2 = tolower(str2[i]);
+        if (ch2 != ' ')
+        {
+            ascii2 += ch2;
+        }
+        
+    }
+
+    return ascii1 - ascii2;
 
 }
 
 int main()
 {
-    string strA = "What";
-    string strB = "what";
-    string strC = "That";
+    assert(strcmp_case_insensitive("hi", "hi") == 0);
+    assert(strcmp_case_insensitive("hi", "HI") == 0);
+    assert(strcmp_case_insensitive("hi", "ha") > 0);
+    assert(strcmp_case_insensitive("ha", "hi") < 0 );
+    assert(strcmp_case_insensitive("", "hi" ) < 0);
+    assert(strcmp_case_insensitive("hil", "hi") > 0);
+    assert(strcmp_case_insensitive("h i", "hi") == 0);
 
-    cout << strcmp_case_insensitive(strA, strB) << "\n";
-    cout << strcmp_case_insensitive(strA, strC) << "\n";
-    cout << strcmp_case_insensitive(strC, strB) << "\n";
-
-    string strH = "Hi";
-    string strh = "hi";
-
-    cout << strcmp_case_insensitive(strH, strh) << "\n";
-    cout << strcmp_case_insensitive(strh, strH) << "\n";
+    cout << "All code works well!" << "\n";
 
     return 0;
 
