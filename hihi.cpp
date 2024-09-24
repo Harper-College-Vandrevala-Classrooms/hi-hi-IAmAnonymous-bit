@@ -3,9 +3,9 @@
 #include <cctype>
 #include <assert.h>
 
-using namespace std
+using namespace std;
 
-;int strcmp_case_insensitive(string str1, string str2)
+int strcmp_case_insensitive(string str1, string str2)
 {
 
     int ascii1 = 0;
