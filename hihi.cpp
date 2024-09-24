@@ -16,6 +16,7 @@ int strcmp_case_insensitive(string str1, string str2)
         char ch1 = tolower(str1[i]);
         if (ch1 != ' ')
         {
+
             ascii1 += ch1;
         }
     }
@@ -34,15 +35,17 @@ int strcmp_case_insensitive(string str1, string str2)
 
 }
 
-;int strcmp_case_insensitive(string str1, string str2, int stop)
+int strcmp_case_insensitive(string str1, string str2, int stop)
 {
 
     int ascii1 = 0;
     int ascii2 = 0;
+
     
     for (int i = 0; i < stop; i++)
     {
         char ch1 = tolower(str1[i]);
+
         if (ch1 != ' ')
         {
             ascii1 += ch1;
